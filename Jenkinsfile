@@ -28,7 +28,7 @@ pipeline {
         stage ("Nexus Publish"){
             steps{
                   sh "echo $BUILD_NUMBER"
-                  sh "curl -v  -X PUT -F r=releases -F g=com.company -F a=widget -F v=1.0.0 -F p=war -F file=petclinic.war -u jenkins:jenkins http://localhost:8081/repository/maven-releases/org/petclinic/${BUILD_NUMBER}/petclinic-${BUILD_NUMBER}.war"
+                  sh "curl -u jenkins:jenkins -X PUT "http://localhost:8081/artifactory/libs-release/petclinic/ROOT.war" -T petclinic.war"
                 }   
             }
         }  
