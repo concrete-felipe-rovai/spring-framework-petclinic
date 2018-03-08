@@ -27,7 +27,7 @@ pipeline {
 
         stage ('Release') {
             steps {
-                sh 'mvn deploy-file'
+                sh 'mvn deploy:deploy-file -DgroupId=com.somecompany -DartifactId=project -Dversion=1.0.0 -DgeneratePom=false -Dpackaging=war -DrepositoryId=nexus -Durl=http://localhost:8081/nexus/content/repositories/releases -Dfile=target/petclinic.war'
             }
                
         }
