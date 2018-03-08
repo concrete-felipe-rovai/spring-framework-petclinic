@@ -27,7 +27,7 @@ pipeline {
         
         stage ("Nexus Publish"){
             steps{
-                    sh " curl -v  -X PUT -F "r=releases" -F "g=com.company" -F "a=widget" -F "v=1.0.0" -F "p=jar" -F "file=petclinic.war" -u jenkins:jenkins http://localhost:8081/repository/maven-releases/org/foo/1.0/foo-1.0.war "
+                    sh " curl -v  -X PUT -F r=releases -F g=com.company -F a=widget -F v=1.0.0 -F p=jar -F file=petclinic.war -u jenkins:jenkins http://localhost:8081/repository/maven-releases/org/foo/1.0/foo-1.0.war "
                 }   
             }
         }  
