@@ -27,7 +27,7 @@ pipeline {
 
         stage ('Release') {
             steps {
-                sh 'mvn deploy:deploy-file -DgroupId=com.somecompany -DartifactId=project -Dversion=1.0.0 -DgeneratePom=false -Dpackaging=war -DrepositoryId=nexus -Durl=http://localhost:8081/repository/petclinic/ -Dfile=target/petclinic.war'
+                sh 'mvn deploy:deploy-file -DgroupId=com.somecompany -DartifactId=petclinic -Dversion=1.0.0 -DgeneratePom=false -Dpackaging=war -DrepositoryId=nexus -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/petclinic.war'
             }
                
         }
